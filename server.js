@@ -14,8 +14,9 @@
     app.use(bodyParser.json());                                     // parse application/json
 
     // start server ======================================
-    server.listen(5000);
-    console.log("App listening on port 8080");
+    var port = process.env.PORT || 5000;
+    server.listen(port);
+    console.log("App listening on port " + port);
 
     // web main page
     app.get('*', function(req, res) {
