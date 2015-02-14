@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+  <title>Weather App</title>
+  <link href="/css/style.css" rel="stylesheet">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> <!-- jQuery -->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script> <!-- angular.js -->
+  <script src="//cdn.socket.io/socket.io-1.2.0.js"></script> <!-- socket.io -->
+  <script type="text/javascript" src="/js/controllers.js"></script> <!-- controllers -->
+</head>
+<body ng-app="twitterApp">
+<div class="wrapper">
+
+	<header class="header">
+
+	</header>
+
+	<div class="middle" ng-controller="mainController">
+		<div class="container">
+			<main class="content">
+				<h2> {{ greeting }} </h2>
+				<h4> latest update : {{ date }} </h4>
+				count : {{ count }}
+			    <div ng-repeat="weather_data in weather_list">
+		    	</br>
+		    		<div id="tweet">
+				    	<table class="tg">
+						  <tr>
+						    <th class="tg-cxkv"></th>
+						    <th class="tg-glis"> {{ weather_data.location }} </th>
+						    <th class="tg-cxkv"></th>
+						    <th class="tg-cxkv"></th>
+						    <th class="tg-cxkv"></th>
+						  </tr>
+						  <tr>
+						    <td class="tg-031e"> <img ng-src="/images/{{ weather_data.change_code }}"> </td>
+						    <td class="tg-7khl" rowspan="2"> {{ weather_data.temperature }} </td>
+						    <td class="tg-031e" rowspan="2"> <img ng-src="{{ weather_data.weather_image }}"> </td>
+						    <td class="tg-text" rowspan="2"> {{ weather_data.weather }} </td>
+						    <td class="tg-031e" rowspan="2"> <img ng-src="/images/{{ weather_data.suggestion_code }}"> </td>
+						  </tr>
+						  <tr>
+						    <td class="tg-031e"> {{ weather_data.temp_dif }} </td>
+						  </tr>
+						</table>
+			    	</div>
+	   			 </div>
+			</main>
+		</div>
+
+		<aside class="left-sidebar">
+		</aside>
+
+		<aside class="right-sidebar">
+		</aside>
+
+	</div>
+
+</div>
+<footer class="footer">
+	<center><h3> Weather App  (c) <a href="no.linkedin.com/in/iamgabriel/en" target="_blank"> Gabriel Andrei </a> </h3></center>
+</footer>
+</body>
+</html>
