@@ -18,7 +18,7 @@
 	  	if(io !== undefined) 
 	  	{
 	  		// server connection
-		    var socket = io.connect('http://localhost:8080');
+		    var socket = io.connect('http://localhost:5000');
 
 		    // set listener for 'twitter-stream' message that will store incoming data
 		    socket.on('sending-data', function (data) {
