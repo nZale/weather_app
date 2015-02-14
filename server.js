@@ -31,7 +31,6 @@
       console.log("Job done @ " + new Date().getMinutes());
     });
 
-
     var weatherModel = function(){
       model = this;
       model.Location = '';
@@ -129,4 +128,6 @@
       socket.emit("connected");
     });
 
+
+    getWeather();
   
