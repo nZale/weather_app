@@ -18,7 +18,7 @@
 	  	if(io !== undefined) 
 	  	{
 	  		// server connection
-		    var socket = io.connect('http://localhost:5000');
+		    var socket = io.connect('http://young-depths-1251.herokuapp.com');
 
 		    // set listener for 'twitter-stream' message that will store incoming data
 		    socket.on('sending-data', function (data) {

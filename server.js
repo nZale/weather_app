@@ -24,7 +24,7 @@
     });
 
     var rule = new schedule.RecurrenceRule();
-    rule.minute = new schedule.Range(0, 59, 5);
+    rule.minute = new schedule.Range(0, 59, 30);
 
     var job = schedule.scheduleJob(rule, function(){
       getWeather();
